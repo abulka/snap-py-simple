@@ -1,12 +1,10 @@
-name: yt-dlp
-summary: A fork of youtube-dl with additional features and patches
+name: snap-py-simple
+summary: A simple hello world
 description: |
-      Download and play videos on your local system. Runs from the command
-      line and with all the features and patches of youtube-dlc in addition
-      to the latest youtube-dl.
+      Prints Hello world to the screen
 
 #version: git
-adopt-info: yt-dlp
+adopt-info: fred
 
 grade: stable
 confinement: devmode
@@ -15,15 +13,14 @@ architectures:
   - build-on: [arm64, armhf, amd64]
 
 apps:
-  yt-dlp:
-    command: bin/yt-dlp
+  fred:
+    command: bin/fred
     plugs: [home, network, network-bind, removable-media]
 
 parts:
-  yt-dlp:
+  fred:
     plugin: python
-    source: https://github.com/yt-dlp/yt-dlp.git
-    # https://forum.snapcraft.io/t/git-error-while-building-snap/10130 advice
+    source: .
     override-build: |
       snapcraftctl build
       snapcraftctl set-version $(git describe --tags)

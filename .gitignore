@@ -1,2 +1,3 @@
 *.snap
-
+dist/
+*.egg-info/

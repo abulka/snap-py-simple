@@ -30,6 +30,7 @@ results in the same snap being built via github actions
 
 ## To trigger the github action
 
+	git tag list
 	git tag -a pre-14
 	git push --follow-tags
 
