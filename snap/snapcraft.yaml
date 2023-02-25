@@ -31,9 +31,9 @@ parts:
   fred:
     plugin: python
     source: .
-    # override-build: |
-    #   snapcraftctl build
-    #   snapcraftctl set-version $(git describe --tags)
+    override-build: |
+      snapcraftctl build
+      snapcraftctl set-version $(git describe --tags)
 
 # The override-build section is used to specify custom build instructions for
 # the part. In this case, the snapcraftctl set-version command is used to set
@@ -41,3 +41,8 @@ parts:
 # command. This means that the version number of the snap will be automatically
 # updated based on the latest git tag when the snap is built.
 
+# I need to uncomment the override-build: section when building with github actions
+# otherwise I get an error about Error: Missing argument 'VERSION' when the 
+# snapcore/action-build@v1 calls snapcraftctl set-version
+# This seems like a bug in snapcore/action-build@v1
+# This also overrides the version: I am setting at the top
