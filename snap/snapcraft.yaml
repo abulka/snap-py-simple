@@ -4,8 +4,8 @@ description: |
       Prints Hello world to the screen
 
 # version: '1.0'
-# version: git
-adopt-info: fred
+version: git
+# adopt-info: fred
 
 # The adopt-info field is used to specify that the snap should be installed
 # using the package name specified, rather than a version number. This is useful
@@ -33,9 +33,9 @@ parts:
     source: .
     build-packages:
       - git
-    override-build: |
-      snapcraftctl build
-      snapcraftctl set-version $(git describe --tags)
+    # override-build: |
+    #   snapcraftctl build
+    #   snapcraftctl set-version $(git describe --tags)
 
 # The override-build section is used to specify custom build instructions for
 # the part. In this case, the snapcraftctl set-version command is used to set

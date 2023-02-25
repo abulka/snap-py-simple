@@ -1,4 +1,4 @@
-name: building youtube-dl using snapcraft
+name: building a simple python app using snapcraft
 on:
   push:
     # branches: [ main ]
