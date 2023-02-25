@@ -5,7 +5,7 @@ description: |
 
 version: '1.0'
 # version: git
-# adopt-info: fred
+adopt-info: fred
 
 # The adopt-info field is used to specify that the snap should be installed
 # using the package name specified, rather than a version number. This is useful
