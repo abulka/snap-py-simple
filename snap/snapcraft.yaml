@@ -3,15 +3,7 @@ summary: A simple hello world
 description: |
       Prints Hello world to the screen
 
-# version: '1.0'
 version: git
-# adopt-info: fred
-
-# The adopt-info field is used to specify that the snap should be installed
-# using the package name specified, rather than a version number. This is useful
-# if you want to distribute a snap that has a consistent package name, but the
-# version number may change over time.
-
 grade: stable
 confinement: devmode
 base: core20
@@ -28,26 +20,6 @@ apps:
       command: bin/python3 -V
 
 parts:
-  fred:
+  build-the-python-stuff-please:
     plugin: python
     source: .
-    # build-packages:
-    #   - git
-    # override-build: |
-    #   snapcraftctl build
-    #   snapcraftctl set-version $(git describe --tags)
-
-# The override-build section is used to specify custom build instructions for
-# the part. In this case, the snapcraftctl set-version command is used to set
-# the version of the snap to the latest git tag, using the git describe --tags
-# command. This means that the version number of the snap will be automatically
-# updated based on the latest git tag when the snap is built.
-
-# I need to uncomment the override-build: section when building with github actions
-# otherwise I get an error about Error: Missing argument 'VERSION' when the 
-# snapcore/action-build@v1 calls snapcraftctl set-version
-# This seems like a bug in snapcore/action-build@v1
-# This also overrides the version: I am setting at the top
-# Actually the error was due to a missing git command in the snap core22.
-# Sometimes it is there, sometimes it isn't. Locally it is there. Weird.
-# If its not there then the build-packages: - git lines should fix it.
