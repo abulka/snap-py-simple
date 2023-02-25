@@ -48,3 +48,6 @@ parts:
 # snapcore/action-build@v1 calls snapcraftctl set-version
 # This seems like a bug in snapcore/action-build@v1
 # This also overrides the version: I am setting at the top
+# Actually the error was due to a missing git command in the snap core22.
+# Sometimes it is there, sometimes it isn't. Locally it is there. Weird.
+# If its not there then the build-packages: - git lines should fix it.
