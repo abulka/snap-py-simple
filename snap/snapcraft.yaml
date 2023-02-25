@@ -31,10 +31,11 @@ parts:
   fred:
     plugin: python
     source: .
+    build-packages:
+      - git
     override-build: |
       snapcraftctl build
-      # snapcraftctl set-version $(git describe --tags)
-      snapcraftctl set-version "1.2"
+      snapcraftctl set-version $(git describe --tags)
 
 # The override-build section is used to specify custom build instructions for
 # the part. In this case, the snapcraftctl set-version command is used to set
