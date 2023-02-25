@@ -1,2 +1,4 @@
-python setup.py sdist
-python setup.py sdist bdist_wheel
+python3 setup.py sdist
+#python3 setup.py sdist bdist_wheel
+
+echo install in dev mode with pip install -e .
