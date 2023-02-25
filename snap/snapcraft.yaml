@@ -31,8 +31,8 @@ parts:
   fred:
     plugin: python
     source: .
-    build-packages:
-      - git
+    # build-packages:
+    #   - git
     # override-build: |
     #   snapcraftctl build
     #   snapcraftctl set-version $(git describe --tags)
