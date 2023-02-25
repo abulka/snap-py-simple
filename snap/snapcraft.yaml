@@ -3,7 +3,7 @@ summary: A simple hello world
 description: |
       Prints Hello world to the screen
 
-version: '1.0'
+# version: '1.0'
 # version: git
 adopt-info: fred
 
